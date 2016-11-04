@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cssgram": "^0.1.3",
     "ui-sketchbook": "^1.2.2"
   }
 }
