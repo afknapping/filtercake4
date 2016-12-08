@@ -41,33 +41,28 @@
 @keyframes enter {
   0% { bottom: -10%; left: 20%; opacity: 0 }
   25% { bottom: -10%; left: 20%; opacity: 0 }
-  50% { bottom: 5%; left: 20% }
-  90% { bottom: 10%; left: 20% }
-  97% { bottom: 51%; left: 20% }
-  98% { bottom: 51%; left: 20% }
-  99% { bottom: 51%; left: 20% }
-  100% { bottom: 50%; left: 20%; opacity: 1 }
+  50% { bottom: 5%; left: 20%; opacity: 0 }
+  100% { bottom: 20%; left: 20%; opacity: 1 }
 }
 
+
+
 @keyframes wobbling {
-  0% {
-    transform: translate(-0.66em, -0.23em) scaleY(1.04) skew(-3.8deg, 0.2deg);
+  0%, 100% {
+    transform: translate(#{random(20) / 100}em, #{random(50) / -100}em) skew(#{random(15) / 10}deg, #{random(15) / -10}deg)
   }
   50% {
-    transform: translate(0.17em, -0.36em) skew(0.9deg, -1.2deg);
-  }
-  100% {
-    transform: translate(-0.66em, -0.23em) scaleY(1.04) skew(-3.8deg, 0.2deg);
+    transform: translate(#{random(70) / -100}em, #{random(30) / -100}em) scaleY(#{random(10) / 100 + 1})  skew(#{random(40) / -10}deg, #{random(8) / 10}deg);
   }
 
 }
 
 .content-wrapper {
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-name: enter;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  bottom: 50%; left: 20%;
+  bottom: 20%; left: 20%;
   position: absolute;
 
 }
@@ -86,15 +81,6 @@
     font-size: 3vh;
   }
 
-  // border: 3px solid $yellow;
-
-
-  // transform: translate(#{random(20) / 100}em, #{random(50) / -100}em) skew(#{random(15) / 10}deg, #{random(15) / -10}deg)
-
-
-  // transform: translate(-0.66em, -0.23em) scaleY(1.04) skew(-3.8deg, 0.2deg);
-
-  // transform: translate(#{random(70) / -100}em, #{random(30) / -100}em) scaleY(#{random(10) / 100 + 1})  skew(#{random(40) / -10}deg, #{random(8) / 10}deg);
     @mixin wobbling {
       animation-duration: 50s;
       animation-name: wobbling;
@@ -113,11 +99,12 @@
     position: absolute;
     left: 0;
     top: 0;
-    // transform: translate(#{random(20) / 100}em, #{random(50) / -100}em) skew(#{random(15) / 10}deg, #{random(15) / -10}deg)
     @include wobbling;
   }
 
 }
+
+
 
 
 
